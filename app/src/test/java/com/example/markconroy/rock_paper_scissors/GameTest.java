@@ -1,6 +1,9 @@
 package com.example.markconroy.rock_paper_scissors;
 
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 public class GameTest {
 
@@ -15,6 +18,12 @@ public class GameTest {
     @Before
     public void before() {
         game = new Game();
+    }
+    
+    @Test
+    public void testSelectionType() {
+        Selection computerChoice = game.getComputerSelection();
+        assertNotNull(computerChoice);
     }
 
 }
