@@ -35,7 +35,7 @@ public class GameTest {
     }
 
     @Test
-    public void testRockLosestoPaper() {
+    public void testRockLosesToPaper() {
         Winner winner = game.getWinner(userChoosesRock, computerChoosesPaper);
         assertEquals(winner.ANDROID, winner);
     }
@@ -44,6 +44,13 @@ public class GameTest {
     public void testRockDrawsRock() {
         Winner winner = game.getWinner(userChoosesRock, computerChoosesRock);
         assertEquals(Winner.DRAW, winner);
+    }
+
+    //Paper
+    @Test
+    public void testPaperBeatsRock() {
+        Winner winner = game.getWinner(userChoosesPaper, computerChoosesRock);
+        assertEquals(Winner.USER, winner);
     }
 
 }
