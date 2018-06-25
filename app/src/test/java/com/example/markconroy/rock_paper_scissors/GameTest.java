@@ -26,11 +26,17 @@ public class GameTest {
         Selection computerChoice = game.getComputerSelection();
         assertNotNull(computerChoice);
     }
-    
+
     @Test
     public void testRockBeatsScissors() {
         Winner winner = game.getWinner(userChoosesRock, computerChoosesScissors);
         assertEquals(Winner.USER, winner);
+    }
+
+    @Test
+    public void testRockLosestoPaper() {
+        Winner winner = game.getWinner(userChoosesRock, computerChoosesPaper);
+        assertEquals(winner.ANDROID, winner);
     }
 
 }
