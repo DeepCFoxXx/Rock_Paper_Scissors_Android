@@ -3,27 +3,34 @@ package com.example.markconroy.rock_paper_scissors;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class GameTest {
 
     Game game;
-    Selection getComputerChoosesRock = Selection.ROCK;
-    Selection getComputerChoosesScissors = Selection.SCISSORS;
-    Selection getComputerChoosesPaper = Selection.PAPER;
-    Selection getUserChoosesRock = Selection.ROCK;
-    Selection getUserChoosesScissors = Selection.SCISSORS;
-    Selection getUserChoosesPaper = Selection.PAPER;
+    Selection computerChoosesRock = Selection.ROCK;
+    Selection computerChoosesScissors = Selection.SCISSORS;
+    Selection computerChoosesPaper = Selection.PAPER;
+    Selection userChoosesRock = Selection.ROCK;
+    Selection userChoosesScissors = Selection.SCISSORS;
+    Selection userChoosesPaper = Selection.PAPER;
 
     @Before
     public void before() {
         game = new Game();
     }
-    
+
     @Test
     public void testSelectionType() {
         Selection computerChoice = game.getComputerSelection();
         assertNotNull(computerChoice);
+    }
+    
+    @Test
+    public void testRockBeatsScissors() {
+        Winner winner = game.getWinner(userChoosesRock, computerChoosesScissors);
+        assertEquals(Winner.USER, winner);
     }
 
 }
