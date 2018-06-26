@@ -73,6 +73,12 @@ public class GameTest {
     }
 
     @Test
+    public void testScissorsLosesToRock() {
+        Winner winner = game.getWinner(userChoosesScissors, computerChoosesRock);
+        assertEquals(Winner.ANDROID, winner);
+    }
+
+    @Test
     public void testScissorsDrawScissors() {
         Winner winner = game.getWinner(userChoosesScissors, computerChoosesScissors);
         assertEquals(Winner.DRAW, winner);
