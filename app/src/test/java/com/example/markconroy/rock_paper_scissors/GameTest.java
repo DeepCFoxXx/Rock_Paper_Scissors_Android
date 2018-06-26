@@ -65,4 +65,11 @@ public class GameTest {
         assertEquals(winner.DRAW, winner);
     }
 
+    //Scissors
+    @Test
+    public void testScissorsBeatsPaper() {
+        Winner winner = game.getWinner(userChoosesScissors, computerChoosesPaper);
+        assertEquals(Winner.USER, winner);
+    }
+
 }
