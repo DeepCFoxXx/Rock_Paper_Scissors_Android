@@ -49,4 +49,16 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    private void play(Selection user) {
+
+        Selection android = game.getComputerSelection();
+
+        userChoiceText.setText(getString(R.string.userChose)+ user.getValue());
+        computerChoiceText.setText(getString(R.string.androidChose) + android.getValue());
+
+        Winner winner = game.getWinner(user, android);
+
+        resultText.setText(winner.getValue());
+    }
+
 }

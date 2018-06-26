@@ -12,4 +12,8 @@ public enum Selection {
         this.value = value;
     }
 
+    public String getValue() {
+        return this.value;
+    }
+
 }
